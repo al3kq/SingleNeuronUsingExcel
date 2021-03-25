@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>Single Artifical Neuron</title>
+<h2 id="single-artificial-neuron-in-excel">Single Artificial Neuron in Excel</h2>
+<p>I first struggled to understand how exactly artificial neurons learn their precise weights through feed-forward and backpropagation. </p>
+<p>I found the best way to understand this algorithm was creating AND and XOR logical neurons and preforming each iteration with Excel functions. These functions were very simple with no hidden layers or bais.</p>
+<h3 id="and-neuron">AND Neuron</h3>
+<p>This logical AND function should return 0 unless all features are 1.</p>
+<p><img src="sc_top.png" alt="Initializing function">
+Iteration 0 of logical AND neuron.</p>
+<ul>
+<li>X_0, X_1, X_2 represent features for each data point.</li>
+<li>W_0, W_1, W_2 represent the initial weights of each node. These all start at 1 instead of using random assignment.</li>
+<li>The net is the total sum of the output node before the activation function is applied.</li>
+<li>Y_Output is the output of this node after applying the step activation function as (=IF(G2&gt;=0,1,0).</li>
+<li>Desired shows the target value for that data point, row 2 has a target value of 0 because not all features are 1. </li>
+<li>Change W_0, Change W_1, Change W_2 represent how each weight is changed based on the error of Y_Output. This function is defined as (=$M$2*A2*(I2-H2)) for W_0. This change is added to the weights in the next iteration. </li>
+<li>Learning rate is a constant value for how much a weight can change at each iteration.</li>
+<li>Error is calcuated using the sum of squared estimates formula defined as (=(I2-H2)^2 + (I3-H3)^2 +(I4-H4)^2 + (I5-H5)^2).</li>
+</ul>
+<p>This process is continued, with weights being updated, until the Error is 0:</p>
+<p><img src="sc1.png" alt="Iteration 1">
+Iteration 1 of logical AND neuron.</p>
+<p><img src="sc2.png" alt="Iteration 2">
+Iteration 2 of logical AND neuron.</p>
+<p><img src="sc3.png" alt="Iteration 3">
+Iteration 3 of logical AND neuron.</p>
+<p><img src="sc4.png" alt="Iteration 4">
+Iteration 4 of logical AND neuron.</p>
+<p><img src="sc5.png" alt="Iteration 5">
+Iteration 5 of logical AND neuron.</p>
+<p>The Error is now 0 and this function only returns 1 when all three features are 1.</p>
+<h3 id="xor-neuron">XOR Neuron</h3>
+<p>This same process was repeated for a logical XOR function. This function should only return 1 when at least one feature is 1, but not all three.</p>
+<p><img src="xor.png" alt="XOR Neuron"></p>
+
+</html>
